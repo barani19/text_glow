@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            outline: none;
+            box-sizing: border-box;
+        }
+        body{
+            overflow: hidden;
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            min-width: 100%;
+            background-color: rgb(1, 0, 5);
+        }
+        
+        .edit{
+            position: relative;
+            text-transform: uppercase;
+            color: rgb(39, 4, 138);
+            letter-spacing: 1px;
+            font-size: 6em;
+            line-height: 0.70em;
+            -webkit-box-reflect: below 1px linear-gradient(transparent,#0008);
+            animation: animate  5s linear infinite;
+        }
+        @media (max-width: 525px) {
+            .edit{
+                font-size: 2em;
+            line-height: 0.70em;
+            letter-spacing: 0px;
+            }
+        }
+        @keyframes animate {
+            0%,18.3%,20.5%,40%,60%,80%{
+                color: #0e3742;
+                text-shadow: none;
+
+            }
+            18.2%,20%,30%,50%,60%,100%{
+                color: #fff;
+                text-shadow: 0 0 10px #03bcf4,
+                0 0 20px #03bcf4,
+                0 0 40px #03bcf4,
+                0 0 80px #03bcf4,
+                0 0 160px #03bcf4;
+            }
+        }
+    </style>
+</head>
+<body>
+        <h1 contenteditable="true" class="edit">Hello</h1>
+</body>
+</html>
