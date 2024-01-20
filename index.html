@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
         *{
             margin: 0;
             padding: 0;
@@ -12,7 +13,7 @@
             box-sizing: border-box;
         }
         body{
-            overflow: hidden;
+
             font-family: Arial, Helvetica, sans-serif;
             display: flex;
             flex-direction: column;
@@ -24,7 +25,7 @@
         }
         
         .edit{
-            position: relative;
+            /* position: relative; */
             text-transform: uppercase;
             color: rgb(39, 4, 138);
             letter-spacing: 1px;
@@ -35,9 +36,9 @@
         }
         @media (max-width: 525px) {
             .edit{
-                font-size: 2em;
+            font-size: 2em;
             line-height: 0.70em;
-            letter-spacing: 0px;
+            letter-spacing: 1px;
             }
         }
         @keyframes animate {
@@ -55,9 +56,58 @@
                 0 0 160px #03bcf4;
             }
         }
+        .editable{
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        svg{
+            height: 150px;
+            width: 150px;
+        }
+        .preload{
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-family: 'Exo 2' , sans-serif;
+        }
+        #neo{
+            stroke: rgb(255, 255, 255);
+            stroke-width: 5px;
+            fill-opacity: 0;
+            stroke-dasharray: 4500;
+            filter: drop-shadow(-5px -5px 5px rgb(250, 238, 238));
+            animation: draw 7s ease infinite;
+            margin-bottom: 30px;
+        }
+        @keyframes draw {
+            0%{
+                stroke-dashoffset: 4500;
+            }
+            100%{
+                stroke-dashoffset: 0;
+                fill-opacity: 0.5;
+            }
+        }
     </style>
 </head>
 <body>
+      <div class="preload">
+        <svg id="neo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M415.4 512h-95.1L212.1 357.5v91.1L125.7 512H28V29.8L68.5 0h108.1l123.7 176.1V63.5L386.7 0h97.7v461.5zM38.8 35.3V496l72-52.9V194l215.5 307.6h84.8l52.4-38.2h-78.3L69 13zm82.5 466.6l80-58.8v-101l-79.8-114.4v220.9L49 501.9h72.3zM80.6 10.8l310.6 442.6h82.4V10.8h-79.8v317.6L170.9 10.8zM311 191.7l72 102.8V15.9l-72 53v122.7z" fill="white"/></svg>
+        <h1>nullvoid</h1>
+      </div>
+       <div class="editable">
         <h1 contenteditable="true" class="edit">Hello</h1>
+       </div>
+       
 </body>
 </html>
